@@ -1,0 +1,59 @@
+.riddle-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 12px 12px 12px 12px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 10px auto;
+    background-color: #6fcbda0d;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+    direction: rtl;
+    // display: flex;
+    // flex-direction: column;
+    // width: 90%;
+    // // border: 1px solid black;
+    // padding: 12px 12px 12px 12px;
+    // overflow: hidden;
+    // border-radius: 4px;
+    // margin: 10px auto;
+    // background-color: #6fcbda0d; //#e2ffff40; //#dedefe1f;
+    // box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2), 0 0px 0px 0 rgba(0,0,0,0.19);
+
+    .riddle-item-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-align: center;
+        // color: white;
+        // text-shadow: 1px 1px 2px black, 0 0 8px blue, 0 0 1px darkblue
+    }
+    
+    .riddle-item-subject {
+        direction: rtl;
+        margin-bottom: 5px;
+    }
+
+    .solved-container {
+        display: flex;
+        // align-items: center;
+        justify-content: flex-start;
+        margin-top: 5px;
+        .riddle-item-solved {
+            height: 22px;
+            width: 22px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            &.solved {
+                background-color: rgb(30, 148, 55);
+            }
+            &.unsolved {
+                background-color: rgb(187, 31, 52);
+            }
+        }
+
+    }
+}

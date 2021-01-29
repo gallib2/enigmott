@@ -1,0 +1,15 @@
+.signup-container {
+    padding: 20px;
+    margin: 20px;
+
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        margin: 0 auto;
+
+        .signup-text-field {
+            margin-top: 20px;
+        }
+    }
+}

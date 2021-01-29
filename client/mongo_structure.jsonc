@@ -1,0 +1,29 @@
+// riddle document example
+[
+{
+    "_id" : "5faee79fc50d9c53a7cc5ccb",//ObjectId("5faee79fc50d9c53a7cc5ccb"),
+    "question" : {
+        "title" : "ahlan",
+        "content" : "the moon is red on monday, why?"
+    },
+    "answer" : "because",
+    "img" : "", // blob ?
+    "date_created" : "" // figure this out
+},
+
+// user documet example 
+
+{
+    "_id" : "5faee79fc50d9c53a7cc5ccb",//ObjectId("5faee79fc50d9c53a7cc5ccb"),
+    "user_name" : "gallib",
+    "password": "yeello",
+    "riddles": {
+        "riddle_id": "5faee79fc50d9c53a7cc5ccb",
+        "start_date": null,
+        "is_solved": false,
+        "solved_date": null,
+        "paint": [{"date": "", "lines": []}]
+    }
+}
+
+]

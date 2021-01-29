@@ -1,0 +1,25 @@
+.riddle-state-container {
+
+    &.nowrap {
+        color: black;
+        // display: initial;
+    }
+    .btn-canvas {
+        width: 30px;
+        height: 30px;
+    
+        margin: 0px;
+        display: none;
+
+        &.solved {
+            color: green;
+            display: initial;
+        }
+    }
+
+    .btn-container {
+        border: 1px solid;
+        width: 30px;
+        height: 30px;
+    }
+}

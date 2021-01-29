@@ -1,0 +1,10 @@
+.home-page-container {
+    .riddle-box-container {
+        margin-top: 30px;
+        .riddles-boxes {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    }
+}

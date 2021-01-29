@@ -1,0 +1,39 @@
+.riddle-answer-container {
+    padding: 5px;
+    margin: 15px;
+    .riddle-answer-text {
+        direction: rtl;
+        text-align: justify;
+        white-space: pre-line;
+        max-height: 400px;
+        overflow: scroll;
+    }
+    .answer-title {
+        font-size: 28px;
+        font-weight: 600;
+        color: #95B0B5; //#95B0B5 //#95B0B5
+        text-shadow: -1px 0 #324B4F, 0 1px #324B4F, 1px 0 #324B4F, 0 -1px #324B4F;
+        letter-spacing: 1px;
+        margin: 2px auto;
+        text-align: center;
+        // color: #95B0B5;
+        // text-align: center;
+        // margin: 10px auto;
+        // padding: 3px;
+        // font-size: 18px;
+        // // width: 25%;
+        // font-weight: 600;
+        // // background-color: #6FCBDA;
+    }
+    .back-btn {
+        text-align: center;
+        margin: 25px auto;
+        padding: 3px;
+        font-size: 18px;
+        border: 1px solid;
+        border-radius: 50px;
+        width: 25%;
+        font-weight: 600;
+        background-color: #95b0b58c;// #6FCBDA;
+    }
+}
