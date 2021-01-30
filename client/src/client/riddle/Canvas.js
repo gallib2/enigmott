@@ -34,6 +34,7 @@ const Canvas = (props) => {
     const [strokeWidth, setStrokeWidth] = useState(4);
     const [canvasStyle, setCanvasStyle] = useState(styles);
     const [errorText, setErrorText] = useState('');
+    const [saveClassName, setSaveClassName] = useState('');
 
     const canvasEl = useRef(null);
 
@@ -67,11 +68,16 @@ const Canvas = (props) => {
 
     const handleSave = async () => {
         try {
+            setSaveClassName('loading');
             const paint = await canvasEl.current.exportPaths();
             setErrorText('');
             await savePaint({ paint, riddleId: props.riddle._id });
+            setTimeout(() => {
+                setSaveClassName('');
+            }, 1000)
         } catch (err) {
             setErrorText(config.texts.errors.savePaintError);
+            setSaveClassName('');
         }
     }
 
@@ -83,7 +89,7 @@ const Canvas = (props) => {
         <div className="riddle-canvas-container">
             <div className='error-text'>{errorText}</div>
             <div className="btn-container">
-                <SaveOutlinedIcon className="btn-canvas save" onClick={handleSave} />
+                <SaveOutlinedIcon className={`btn-canvas save ${saveClassName}`} onClick={handleSave} />
                 <CreateOutlinedIcon className="btn-canvas change" onClick={handleClickPen} />
                 <Crop75OutlinedIcon className="btn-canvas change" onClick={handleClickErase} />
                 <DeleteOutlineOutlinedIcon className="btn-canvas change" onClick={() => canvasEl.current.clearCanvas()} />
