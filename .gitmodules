@@ -1,0 +1,3 @@
+[submodule "enigmot-api"]
+	path = enigmot-api
+	url = https://github.com/gallib2/enigmot-api

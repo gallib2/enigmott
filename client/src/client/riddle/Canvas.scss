@@ -23,6 +23,11 @@
             //     color: green;
             // }
 
+            &.loading {
+                transition: color 0.5s ease;
+                color: lightsteelblue;
+            }
+
             display: initial;
         }
     }

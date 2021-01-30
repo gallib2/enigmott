@@ -5,11 +5,13 @@ import RiddleState from './riddleState';
 
 import './riddleItem.scss';
 
-const RiddleItem = ({ riddle }) => {
+const RiddleItem = (props) => {
     const [subject, setSubject] = useState('');
     const [solvedText, setSolvedText] = useState('mark as solved');
     const [isSolved, setIsSolved] = useState(false);
     const [solvedClassName, setSolvedClassName] = useState('unsolved');
+    const [riddle, setRiddle] = useState(props.riddle);
+
     const history = useHistory();
 
     useEffect(() => {
@@ -28,13 +30,15 @@ const RiddleItem = ({ riddle }) => {
 
     const handleMarkAsSolved = (isSolved) => {
         // event.stopPropagation();
+        const newRiddle = {...riddle};
+        newRiddle.is_solved = isSolved;
+        setRiddle(newRiddle);
+        
         if (isSolved) {
             // switch to unsolved
             markSolveStatus({ text: 'mark as unsolved', solved: true, className: 'solved' });
-            // TODO - send data to db
         } else {
             markSolveStatus({ text: 'mark as solved', solved: false, className: 'unsolved' })
-            // TODO - send data to db
         }
     }
 
@@ -49,11 +53,6 @@ const RiddleItem = ({ riddle }) => {
     const solveStateText = () => {
         return <span className='riddle-item-btn'>{solvedText}</span>
     }
-
-    // const overrideCheckBox = () =>{
-    //     return <Checkbox onClick={handleMarkAsSolved}/>
-    //  }
-
 
     return (
         <div className='riddle-item-container' onClick={handleRiddleClick}>
@@ -74,49 +73,6 @@ const RiddleItem = ({ riddle }) => {
             <div className="riddle-item-subject">{subject}</div>
         </div>
     )
-
-
-    // return (
-    //     <div className='riddle-item-container' onClick={handleRiddleClick}>
-
-    //         <div className='riddle-item-title'>{riddle.question.title}</div>
-    //         {/* <div className='riddle-item-content'>{riddle.question.content}</div> */}
-    //         <div className="riddle-item-subject">{subject}</div>
-    //         <div className='solved-container'>
-    //             <RiddleState
-    //                 showWrap={true}
-    //                 riddle={riddle}
-    //                 content={solveStateText()}
-    //                 onClickChangeSolveState={handleMarkAsSolved}
-    //                 style={{display: "flex",
-    //                     alignItems: "center",
-    //                     justifyContent: "start"}}
-    //             />
-    //             {/* <button className='riddle-item-btn' onClick={handleMarkAsSolved}>{solvedText}</button>
-    //             <span className={`riddle-item-solved ${solvedClassName}`}></span> */}
-    //         </div>
-    //     </div>
-    // )
-
-    // return (
-    //     <div className='riddle-item-container' onClick={handleRiddleClick}>
-    //         <div className='riddle-item-title'>{riddle.question.title}</div>
-    //         {/* <div className='riddle-item-content'>{riddle.question.content}</div> */}
-    //         <div className="riddle-item-subject">{subject}</div>
-    //         <div className='solved-container'>
-    //             <RiddleState
-    //                 riddle={riddle}
-    //                 content={solveStateText()}
-    //                 onClickChangeSolveState={handleMarkAsSolved}
-    //                 style={{display: "flex",
-    //                     alignItems: "center",
-    //                     justifyContent: "start"}}
-    //             />
-    //             {/* <button className='riddle-item-btn' onClick={handleMarkAsSolved}>{solvedText}</button>
-    //             <span className={`riddle-item-solved ${solvedClassName}`}></span> */}
-    //         </div>
-    //     </div>
-    // )
 }
 
 export default RiddleItem;
